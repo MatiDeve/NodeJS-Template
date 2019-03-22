@@ -1,0 +1,41 @@
+extends ./admin-layout.pug
+
+block body
+  .row.lmv
+    .col-12
+      p.adm-title PRODUCTOS
+    .col-12
+      a.btn.btn-primary.btn-mg(href="./new") Añadir Producto
+  
+  
+  .row.lmv.mg-top
+    if (alert)
+      .col-12
+        .alert.alert-danger!=alert
+    if (success)
+      .col-12
+        .alert.alert-success!=success
+
+    if products && products.length
+      .col-12.mg-top
+        .table-responsive
+          table.table.text-center.table-hover
+            thead.thead-dark
+              tr
+                th(scope="col") Nombre
+                th(scope="col") Subcategoría
+                th(scope="col") Banner
+                th(scope="col") Operaciones
+            tbody
+              for product in products
+                tr
+                  th(scope="row") #{product.name}
+                  td(scope="row") #{product.subcategory.name}
+                  td 
+                    img.table-img(src="/public/images/products/"+product._id+"."+product.banner_extension)
+                  td.text-right
+                    a.btn.btn-success.lmh.btn-mg(href="./"+product._id+"/edit") Actualizar
+                    a.btn.btn-danger.lmh.btn-mg(href="./"+product._id+"/delete") Eliminar
+    else
+      .col-12.mg-top.text-center
+        p No hay productos.

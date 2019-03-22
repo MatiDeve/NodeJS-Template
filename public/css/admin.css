@@ -1,0 +1,93 @@
+body{
+  background-color: #eee;
+}
+
+.mg-top{
+  margin-top: 10px;
+}
+
+.table-img{
+  height: 50px;
+}
+
+.login-box{
+  border-radius: 15px;
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  -webkit-box-shadow: 0px 0px 3px 1px rgb(193, 193, 193);
+  -moz-box-shadow: 0px 0px 3px 1px rgb(193, 193, 193);
+  box-shadow: 0px 0px 3px 1px rgb(193, 193, 193);
+}
+
+.internal-padding{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.adm-opc-item{
+  color: inherit;
+}
+
+.adm-opc-item:hover{
+  font-weight: bold;
+}
+
+.adm-title{
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.cnt-mg{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cnt-mg-2{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.cnt-border{
+  padding: 10px;
+  border: 1px solid #c7c7c7;
+}
+
+.new-btn-mg-left{
+  margin-top: 10px;
+  margin-left: 5px;
+  color: white !important;
+}
+
+.new-btn-mg-right{
+  margin-top: 10px;
+  margin-right: 5px;
+  color: white !important;
+}
+
+.exercises{
+  padding: 10px;
+}
+
+.days{
+  padding: 0 10px 10px 10px;
+}
+
+.mg-top{
+  margin-top: 20px;
+}
+.btn-mg{
+  margin: 0 5px;
+}
+
+@media(max-width: 767px){
+  .phone-top-margin{      
+    margin-top: 10px;
+  }
+}
+
+@media(min-width: 768px){
+  body{      
+    padding: 16px;
+  }
+}

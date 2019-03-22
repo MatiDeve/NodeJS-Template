@@ -1,0 +1,52 @@
+extends ./admin-layout.pug
+
+block body
+  .row
+    .col-12
+      p.adm-title ACTUALIZAR ADMINISTRADOR
+  .row
+    if (alert)
+      .col-12.mg-top
+        .alert.alert-danger!=alert
+    .col-12
+      form(action="./edit" method="POST")
+        .row
+          .col-12
+            .form-group
+              label(for="email") Email
+              input.form-control(type="text" name="email" id="email", value=email)
+
+          .col-12.col-md-6
+            .form-group
+              label(for="name") Nombre
+              input.form-control(type="text" name="name" id="name", value=name)
+
+          .col-12.col-md-6
+            .form-group
+              label(for="surname") Apellido
+              input.form-control(type="text" name="surname" id="surname", value=surname)
+
+          .col-12
+            .form-group
+              label(for="permissions") Permisos
+              select.form-control(id="permissions" name="permissions")
+                option(value="null") Ninguno
+                if(permissions)
+                  for permission in permissions
+                    if permission == oldPermissions
+                      option(value=permission selected) #{permission}
+                    else
+                      option(value=permission) #{permission}
+
+          .col-12.col-md-6
+            .form-group
+              label(for="password") Contraseña (dejar vacío si no desea cambiarlo)
+              input.form-control(type="password" name="password" id="password")
+
+          .col-12.col-md-6
+            .form-group
+              label(for="password_confirmation") Confirmar Contraseña (dejar vacío si no desea cambiarlo)
+              input.form-control(type="password" name="password_confirmation" id="password_confirmation")
+
+          .col-12
+            input.form-control.btn.btn-primary.cnt-mg(type="submit" value="Actualizar administrador")

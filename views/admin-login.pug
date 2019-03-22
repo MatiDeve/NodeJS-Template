@@ -1,0 +1,22 @@
+extends ./layout.pug
+
+block head
+  link(rel='stylesheet', type='text/css', media='screen', href='/public/css/login.css')
+
+block content
+  .user-panel.card-shadow
+    .row
+      if (alert)
+        .col-12
+          .alert.alert-danger!=alert
+      .col-12
+        picture
+          center
+            img(src="/public/images/sources/deve_dark.png", alt=WEB_NAME style="width: 60%; margin-bottom: 32px;")
+        p.user-login-text Bienvenido de nuevo
+        form(method="POST" action="/admin/login")
+          .form-group
+            input.form-control(type="text" name="email" placeholder="Email", value=email)
+          .form-group
+            input.form-control(type="password" name="password" placeholder="Contraseña", value=password)
+          input.form-control.btn.btn-primary.btn-large(type="submit" value="Iniciar sesión")

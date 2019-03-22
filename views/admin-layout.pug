@@ -1,0 +1,37 @@
+extends ./layout.pug
+
+block head
+  link(rel='stylesheet', type='text/css', href='/public/css/admin.css')
+  block adm-head
+
+block content
+  .container-fluid.margin-top-100
+    .row.justify-content-center
+      .col-12.col-sm-8.col-md-4.col-lg-3.phone-top-margin
+        .row.internal-padding
+          .col-12.login-box
+            a.w100.no-underline.adm-opc-item(href="/admin/")
+              .col-12 Inicio
+              .dropdown-divider
+            a.w100.no-underline.adm-opc-item(href="/admin/admins/")
+              .col-12 Administradores
+              .dropdown-divider
+            a.w100.no-underline.adm-opc-item(href="/admin/categories/")
+              .col-12 Categorías
+              .dropdown-divider
+            a.w100.no-underline.adm-opc-item(href="/admin/subcategories/")
+              .col-12 Subcategorías
+              .dropdown-divider
+            a.w100.no-underline.adm-opc-item(href="/admin/products/")
+              .col-12 Productos
+              .dropdown-divider
+            a.w100.no-underline.adm-opc-item(href="/admin/logout")
+              .col-12 Salir
+        
+      .col-12.col-sm-8.col-lg-9.phone-top-margin
+        .row.internal-padding
+          .col-12.login-box
+            block body
+
+block scripts
+  block adm-scripts

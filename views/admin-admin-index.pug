@@ -1,0 +1,39 @@
+extends ./admin-layout.pug
+
+block body
+  .row.lmv
+    .col-12
+      p.adm-title ADMINISTRADORES
+    .col-12
+      a.btn.btn-primary.btn-mg(href="./new") Añadir Administrador
+  
+  
+  .row.lmv.mg-top
+    if (alert)
+      .col-12
+        .alert.alert-danger!=alert
+    if (success)
+      .col-12
+        .alert.alert-success!=success
+
+    if admins && admins.length
+      .col-12.mg-top
+        .table-responsive
+          table.table.text-center.table-hover
+            thead.thead-dark
+              tr
+                th(scope="col") Email
+                th(scope="col") Permisos
+                th(scope="col") Operaciones
+            tbody
+              for admin in admins
+                tr
+                  th(scope="row") #{admin.email}
+                  td #{admin.permissions}
+                    
+                  td.text-right
+                    a.btn.btn-success.lmh.btn-mg(href="./"+admin._id+"/edit") Actualizar
+                    a.btn.btn-danger.lmh.btn-mg(href="./"+admin._id+"/delete") Eliminar
+    else
+      .col-12.mg-top.text-center
+        p No hay administradores.
